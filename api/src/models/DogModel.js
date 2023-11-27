@@ -19,7 +19,7 @@ module.exports = (sequelize) => {
             }
         },
         nombre: {
-            type: DataTypes.STRING(40),
+            type: DataTypes.STRING,
             allowNull: false,
         },
         altura: {
@@ -33,6 +33,10 @@ module.exports = (sequelize) => {
         años: {
             type: DataTypes.INTEGER,
             allowNull: true,
+        },
+        creado:{
+            type: DataTypes.BOOLEAN,
+            defaultValue: true,
         },
     },
         { timestamps: false }, // para que en la tabla no me arroje la columna de createdAT y updatedAT

@@ -15,6 +15,10 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        creado:{
+            type: DataTypes.BOOLEAN,
+            defaultValue: true,
+        },
 
     },
         { timestamps: false }, // para que en la tabla no me arroje la columna de createdAT y updatedAT
