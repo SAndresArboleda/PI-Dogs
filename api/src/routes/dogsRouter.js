@@ -2,7 +2,7 @@ const { Router } = require("express");
 const {
     getRazasHandler,
     getDetalHandler,
-    getRazaHandler,
+    getRazaNameHandler,
     postDogHandler,
     putActualizarHandler,
     putDeleiHandler,} = require('../handler/dogsHandlers')
@@ -12,7 +12,7 @@ const dogsRouter = Router();
 
 dogsRouter.get('/', getRazasHandler);  //Buscar todas las razas
 dogsRouter.get("/:id", getDetalHandler);  //Buscar detalles por razas
-dogsRouter.get("/name", getRazaHandler);  //Buscar razas por nombre
+dogsRouter.get("/name", getRazaNameHandler);  //Buscar razas por nombre
 dogsRouter.post("/", postDogHandler);  //Crear un nuevo perro
 // dogsRouter.put("/", putActualizarHandler);  //Actualizar detalles perro
 // dogsRouter.delete("/", putDeleiHandler);  //Borrar un perro
