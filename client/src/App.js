@@ -12,6 +12,7 @@ function App() {
     <div className="App">
       <p>Soy el App</p>
       <Switch>
+        
       <Route exact path="/home" component={Home} />
       <Route path="/home/:id" component={Detail} />
       <Route path="/create" component={Create} />

@@ -7,7 +7,8 @@ const app = express();
 
 app.use(cors());
 
-//Estos son los middlware
+//Estos son los middlware: es un mediador, es una funcion que se ejecuta antes de que continue el flujo de informacion.
+
 app.use(morgan("dev"))
 
 app.use((req, res, next) => {
