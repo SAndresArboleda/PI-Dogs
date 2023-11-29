@@ -1,0 +1,34 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #95dada;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 25px;
+    cursor: pointer;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+}
+
+grey .card-container:hover {
+    transform: scale(1.05);
+}
+
+/* display: flex;  //para que se muevan libremente los elementos dentro del contenedor
+    flex-direction: column; // separe los elementos y los ponga en linea
+    background-color: #95dada;  //color de fondo
+    border: 1px solid grey;  //borde a la tarjeta, linea solida
+    border-radius: 5px;  // borde en radio a la tarjeta
+    padding: 25px; //los elementos tengan un margen interios
+    cursor: pointer;  //para que el cursor cambie a manito al pasar por esta tarjeta
+    -moz-osx-font-smoothing: grayscale; //
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;  // para que el salto de la tarjeta sea gradual
+    
+    grey .card-container:hover {  //para que se agrande 1.05 la tajeta al pasar por encima de ella
+    transform: scale(1.05);
+    
+    */

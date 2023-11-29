@@ -9,7 +9,7 @@ const getDogByRaza = async() => {
         return arr.map((elem)=>{
             return {
                 Id: elem.id,
-                imagen: elem.reference_image_id,
+                Imagen: elem.reference_image_id,
                 Nombre: elem.name,
                 Grupo: elem.breed_group,
                 Temperamento: elem.temperament,

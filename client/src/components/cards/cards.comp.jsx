@@ -3,8 +3,7 @@ import './cards.css';
 
 function Cards() {
   return (
-    <div className="App">
-      <p>Estas son las Cards</p>
+    <div className="card-list">
       <Card/>
       <Card/>
       <Card/>

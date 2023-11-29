@@ -1,9 +1,12 @@
-//import './navbar.css';
+import './navbar.css';
 
 function Navbar() {
   return (
-    <div className="App">
-      <p>Estas son las Navbar</p>
+    <div className="search-box">
+      <form>
+        <input placeholder="Busqueda"/>
+        <button>Buscar</button>
+        </form>
     </div>
   );
 }

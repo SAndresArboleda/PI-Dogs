@@ -1,0 +1,19 @@
+.search-box {
+    -webkit-appearance: none;
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 150px;
+    line-height: 30px;
+    margin-bottom: 30px; 
+}
+
+/* -webkit-appearance: none;
+border: none;  // le quito el borde
+outline: none;  //quito linea externa a la caja
+padding: 10px;  // agregando padding para que el borde no se pegue a la caja
+width: 150px;  //Ancho a la barra de busqueda
+line-height: 30px;  // altura de la linea de 30px
+margin-bottom: 30px;   //margen boton
+
+*/

@@ -1,0 +1,15 @@
+.card-list {
+    width:85vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+/* width:85vw;  //para que el brouser ocupe el 85% de la pantalla, para cualquier dispositivo
+    margin: 0 auto;   //margen automatico para que no agregue espacio extra a ningun lado
+    display: grid;  //me envia los elementos en pequeños contenedores
+    grid-template-columns: 1fr 1fr 1fr 1fr;  //los elementos en contenedores del mismo tamaño
+    grid-gap: 20px;   //espacio entre tarjeta
+    
+    */
