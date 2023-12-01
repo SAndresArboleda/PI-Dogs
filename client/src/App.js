@@ -3,6 +3,7 @@ import {Route, Switch} from "react-router-dom"
 import Create from './views/create/create.comp';
 import Detail from './views/detail/detail.comp';
 import Home from './views/home/home.comp';
+import LandingPage from "./views/landing/landing.comp";
 
 import './App.css';
 
@@ -10,9 +11,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <p>Soy el App</p>
       <Switch>
-        
+      <Route exact path='/' component={LandingPage}/>
       <Route exact path="/home" component={Home} />
       <Route path="/home/:id" component={Detail} />
       <Route path="/create" component={Create} />

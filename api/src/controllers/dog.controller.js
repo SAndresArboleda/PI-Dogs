@@ -2,24 +2,25 @@ const { Sequelize } = require('sequelize');
 const {Dog} = require('../db')
 const axios = require('axios')
 const {Op} = require("sequelize")
+const { API_KEY } = process.env
 
 
 const getDogByRaza = async() => {
     let infClean = (arr)=>{
         return arr.map((elem)=>{
             return {
-                Id: elem.id,
-                Imagen: elem.reference_image_id,
-                Nombre: elem.name,
-                Grupo: elem.breed_group,
-                Temperamento: elem.temperament,
-                "Peso (Kg)": elem.weight.metric,
-                Creado: false,
+                id: elem.id,
+                image: elem.reference_image_id,
+                nombre: elem.name,
+                grupo: elem.breed_group,
+                temperamento: elem.temperament,
+                "peso (Kg)": elem.weight.metric,
+                creado: false,
             }
         })
     }
     const razasDB = await Dog.findAll()
-    const infoApi = (await axios.get("https://api.thedogapi.com/v1/breeds")).data; 
+    const infoApi = (await axios.get(`https://api.thedogapi.com/v1/breeds`)).data; 
     const razasApi = infClean(infoApi);
 
     return [...razasDB, ...razasApi]
@@ -30,13 +31,13 @@ const getDogById = async (id, source) => {
     let infoClean = (arr)=>{
         return arr.map((elem)=>{
             return {
-                Id: elem.id,
-                Imagen :elem.reference_image_id,
-                Nombre: elem.name,
-                Altura: elem.height.metric,
-                "Peso (Kg)": elem.weight.metric,
-                "Años de Vida": elem.life_span,
-                Creado: false
+                id: elem.id,
+                image: elem.reference_image_id,
+                nombre: elem.name,
+                altura: elem.height.metric,
+                "peso (Kg)": elem.weight.metric,
+                "años de Vida": elem.life_span,
+                creado: false
             }
         })
     }
@@ -54,7 +55,7 @@ const getDogByName = async (name) => {
         return arr.map((elem)=>{
             return {
                 id: elem.id,
-                imagen :elem.reference_image_id,
+                image: elem.reference_image_id,
                 nombre: elem.name,
                 creado: false
             }

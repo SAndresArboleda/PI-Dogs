@@ -9,9 +9,10 @@ function rootReducer(state=initialState, action){
             return{
                 ...state,
                 allDogs:action.payload,
+                alltemperaments:action.payload,
             };
         default:
-            return state
+            return {...state}
     }
 }
 

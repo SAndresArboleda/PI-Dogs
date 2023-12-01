@@ -4,16 +4,29 @@
     background-color: #95dada;
     border: 1px solid grey;
     border-radius: 5px;
-    padding: 25px;
+    padding: 10px;
     cursor: pointer;
     -moz-osx-font-smoothing: grayscale;
     backface-visibility: hidden;
     transform: translateZ(0);
     transition: transform 0.25s ease-out;
+    font-size: 15px;
 }
 
-grey .card-container:hover {
+.card-container:hover {
     transform: scale(1.05);
+}
+
+.cardImage {
+    max-width:fit-content;
+    align-self: center;
+    max-height: 170px;
+    border-radius: 5px;
+}
+
+.link {
+    color:black;
+    text-decoration: none;
 }
 
 /* display: flex;  //para que se muevan libremente los elementos dentro del contenedor

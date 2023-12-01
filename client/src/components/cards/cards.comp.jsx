@@ -1,15 +1,18 @@
 import Card from '../card/card.comp';
 import './cards.css';
 
-function Cards() {
+function Cards({allDogs}) {  //aca recibimos a allDogs como props
+  const dogsList = allDogs
+
   return (
     <div className="card-list">
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
+      {dogsList?.map(dog =>
+        < Card dog={dog} />)}
     </div>
   );
 }
 
 export default Cards;
+
+// {dogsList?.map(dog=>
+//   < Card dog={dog} />)}
