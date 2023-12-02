@@ -13,7 +13,7 @@ function LandingPage() {
             <div className="welcome">
                 <h1>Henry's Dogs</h1>
                 <small>Proyecto Individual por <a target='_blank' rel="noreferrer">Simon Andres Arboleda</a></small>
-                <Link to='/home' className="button" ><button>Ingreso</button></Link>
+                <Link to='/home' className="button" ><button>INICIAR</button></Link>
             </div>
         </div>
     )

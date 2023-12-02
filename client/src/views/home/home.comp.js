@@ -6,6 +6,7 @@ import Cards from "../../components/cards/cards.comp";
 import Navbar from "../../components/navbar/navbar.comp";
 
 import './home.css';
+import SearchBar from "../../components/searchBar/searchBar";
 
 //1.para ocupar el dispach, traer el hook y guardarlo en una variable
 function Home() {
@@ -16,17 +17,19 @@ function Home() {
 
   useEffect(() => { //para que nuestra action sea ejecutada cuando la pagina se carga por primera vez hacemos el dispach dentro de useEffect
     dispatch(getDogs());
+    // return (()=>{   //consultar como hacerlo para el PI
+    //   clearDetail()  //esto es para limpiar el estado cuando pase a otra pagina
+    // })
   }, [dispatch]); //esto es array de dependencia, para decir que se ejecute la funcion getDogs, al momento de hacer el dispach. 
 
-  // return (()=>{   //consultar como hacerlo para el PI
-  //   clearDetail()  //esto es para limpiar el estado cuando pase a otra pagina
-  // })
 
   return (
     <div className="home">
       <h2 className="home-title">Home</h2>
+      <SearchBar />
       <Navbar />
       <Cards allDogs={allDogs}/>
+      
     </div>
   );
 }

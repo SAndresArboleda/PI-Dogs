@@ -14,7 +14,9 @@ const getDogByRaza = async() => {
                 nombre: elem.name,
                 grupo: elem.breed_group,
                 temperamento: elem.temperament,
-                "peso (Kg)": elem.weight.metric,
+                peso: elem.weight.metric,
+                altura: elem.height.metric,
+                vida: elem.life_span,
                 creado: false,
             }
         })
@@ -34,10 +36,12 @@ const getDogById = async (id, source) => {
                 id: elem.id,
                 image: elem.reference_image_id,
                 nombre: elem.name,
+                grupo: elem.breed_group,
+                temperamento: elem.temperament,
+                peso: elem.weight.metric,
                 altura: elem.height.metric,
-                "peso (Kg)": elem.weight.metric,
-                "años de Vida": elem.life_span,
-                creado: false
+                vida: elem.life_span,
+                creado: false,
             }
         })
     }
@@ -57,7 +61,12 @@ const getDogByName = async (name) => {
                 id: elem.id,
                 image: elem.reference_image_id,
                 nombre: elem.name,
-                creado: false
+                grupo: elem.breed_group,
+                temperamento: elem.temperament,
+                peso: elem.weight.metric,
+                altura: elem.height.metric,
+                vida: elem.life_span,
+                creado: false,
             }
         })
     };
@@ -74,5 +83,6 @@ const getDogByName = async (name) => {
 const createDogDB = async (nombre,altura,peso,años)=>{ 
     return await Dog.create({nombre,altura,peso,años});
 };
+
 
 module.exports = {getDogByRaza, getDogById, getDogByName, createDogDB, };

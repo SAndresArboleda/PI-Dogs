@@ -1,11 +1,13 @@
 import {Route, Switch} from "react-router-dom"
 
+
 import Create from './views/create/create.comp';
-import Detail from './views/detail/detail.comp';
+import Detail from './views/detail/detailHome.comp';
 import Home from './views/home/home.comp';
 import LandingPage from "./views/landing/landing.comp";
 
 import './App.css';
+
 
 
 function App() {

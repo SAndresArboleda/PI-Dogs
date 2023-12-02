@@ -1,19 +1,33 @@
-import { GET_DOGS } from "./action";
+import { GET_DOGS, GET_DOGS_BY_NAME, GET_DOGS_BY_ID } from "./action";
 
 
-let initialState = {allDogs:[], alltemperaments:[]}
+let initialState = {allDogs:[]}
 
 function rootReducer(state=initialState, action){
     switch(action.type){
+
         case GET_DOGS:
             return{
-                ...state,
-                allDogs:action.payload,
-                alltemperaments:action.payload,
+                
+                allDogs:action.payload
             };
+
+        case GET_DOGS_BY_NAME:
+            return{
+                ...state,
+                allDogs:action.payload
+            }
+            
+        case GET_DOGS_BY_ID:
+            return{
+                ...state,
+                allDogs:action.payload
+            }
+        
         default:
             return {...state}
     }
+
 }
 
 export default rootReducer;
