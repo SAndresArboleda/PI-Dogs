@@ -1,29 +1,47 @@
-//import './detail.css';
+import './detailHome.css';
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
-import Detail from "../../components/detail/detail.comp";
 import { getDogById } from "../../redux/action";
+import { useParams } from "react-router-dom";
 
-function DetailHome() {
+import defaultImage from '../../assets/img/default_img.jpg';
 
-  const dispatch = useDispatch();
-  const allDogs = useSelector((state) => state.allDogs);
+
+const Detalle = () => {
+  const { id } = useParams()
+  const dispatch = useDispatch()
+  const { allDogs } = useSelector(state => state);
+
 
   useEffect(() => {
-  
-    dispatch(getDogById(2));
-  }, [dispatch]);
+    dispatch(getDogById(id));
+  }, []);
 
+  const Detail = ({ dog }) => {
 
-    return (
-      <div className="App">
-        <p>Soy el Detail</p>
-        {allDogs?.map(dog =>
-        <Detail dog={dog}/>)}
-        
-      </div>
-    );
-  }
-  
-  export default DetailHome;
+  return (
+    <div className='card-contain'>
+      <h2>{dog.nombre} </h2>
+      <img className="cardImage" src= {dog.image
+      ?`https://cdn2.thedogapi.com/images/${dog.image}.jpg`
+      :defaultImage
+    }
+        />
+      <h4>temperamento: {dog.temperamento} </h4>
+      <h5>altura: {dog.altura} </h5>
+      <h5>peso(kg): {dog.peso} </h5>
+      <h5>vida: {dog.vida} </h5>
+    </div>
+  );
+}
+
+  return (
+    <div className="App">
+      {allDogs?.map(dog =>
+        <Detail dog={dog} />)}
+    </div>
+  );
+}
+
+export default Detalle;
