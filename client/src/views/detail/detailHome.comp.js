@@ -40,6 +40,7 @@ const Detalle = () => {
     <div className="App">
       {allDogs?.map(dog =>
         <Detail dog={dog} />)}
+        <button >Home</button>
     </div>
   );
 }
