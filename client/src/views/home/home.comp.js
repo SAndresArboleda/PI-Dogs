@@ -1,6 +1,6 @@
 import { useEffect } from "react";  //nos ayuda a controlar el ciclo de vida en la se realiza la funcionalidad de mi pagina
 import { useDispatch, useSelector } from "react-redux";
-import { getDogs, getDogsByName } from "../../redux/action";
+import { getDogs, getDogsByName} from "../../redux/action";
 import { useState } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
@@ -17,7 +17,7 @@ function Home() {
   const allDogs = useSelector((state) => state.allDogs); //una vez que se modifica el estado se envia a todos los componentes subscritos al estado. 
   //con useSelector indico a que estado quiero estar subscrito, para ervisar sus cambios
   //alDogs es un componente global porque esta subscrito en el redux(que es donde estan los componentes globales)/en reducer.
-  const [searchString, setSearchString] = useState("")  //creo un estado local que corresponde al sting de lo que copio en la barrita de busqueda
+  const [searchString, setSearchString] = useState("");  //creo un estado local que corresponde al sting de lo que copio en la barrita de busqueda
 
 
 
@@ -26,10 +26,29 @@ function Home() {
     e.preventDefault();
     setSearchString(e.target.value);
   }
-    const handleSubmit = (e) => {   //para que cuando le haga click en mi imput, me haga un filtrado de todos los "dogs", con el nombre que asigno dentro del imput (e.tajget.value)
+  
+  const handleSubmit = (e) => {   //para que cuando le haga click en mi imput, me haga un filtrado de todos los "dogs", con el nombre que asigno dentro del imput (e.tajget.value)
     e.preventDefault();
     dispatch(getDogsByName(searchString))
-    }
+  }
+
+  // const handleAscSort = (e) => {
+  //   e.preventDefault();
+  //   allDogs.sort(function (a, b) {
+  //     if (a.name > b.name) { return 1 }
+  //     return -1
+  //   });
+  //   dispatch(sortDogsAscending(allDogs));
+  // }
+
+  // const handleDescSort = (e) => {
+  //   e.preventDefault();
+  //   allDogs.sort(function (a, b) {
+  //     if (a.name < b.name) { return 1 }
+  //     return -1
+  //   });
+  //   dispatch(sortDogsDescending(allDogs));
+  // }
 
   //HACEMOS LA SEARCH EN HOME PARA QUE LA BARRA DE NAVEGACION QUEDE REUTILIZABLE, SI SE NECESITA USAR OTRA BARRA POR EJEMPLO EN LA PAGINA DE FAVORITOS
 
@@ -63,7 +82,7 @@ function Home() {
       <Link to='/home'><button >HOME</button></Link>
       <h2 className="home-title">Home</h2>
       <Link to='/create'><button>CREAR DOG</button></Link>
-      <Navbar handleSubmit={handleSubmit} handleChange={handleChange} />
+      <Navbar handleSubmit={handleSubmit} handleChange={handleChange}/>
       <Cards allDogs={allDogs} />
 
     </div>

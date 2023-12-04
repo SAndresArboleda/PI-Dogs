@@ -78,7 +78,6 @@ const getDogByName = async (name) => {
     const dogNameAll = await Dog.findAll({where:{nombre:name}});
     return [...filterDogApi, ...dogNameAll]
 }
-//({where:{name:{[Op.ilike]:`%${name}%`}}});
 
 const createDogDB = async (nombre,altura,peso,años)=>{ 
     return await Dog.create({nombre,altura,peso,años});

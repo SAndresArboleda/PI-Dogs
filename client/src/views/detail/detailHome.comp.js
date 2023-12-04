@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getDogById } from "../../redux/action";
 import { useParams } from "react-router-dom";
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 import defaultImage from '../../assets/img/default_img.jpg';
 
@@ -40,7 +41,7 @@ const Detalle = () => {
     <div className="App">
       {allDogs?.map(dog =>
         <Detail dog={dog} />)}
-        <button >Home</button>
+        <Link to={"/home"}><button >Home</button></Link>
     </div>
   );
 }

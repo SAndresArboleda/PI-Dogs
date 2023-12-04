@@ -1,6 +1,5 @@
 import axios from "axios"
-const {API_KEY} = process.env
-
+//const {API_KEY} = process.env
 
 
 export function getDogsByName(name) {
@@ -33,10 +32,70 @@ export function getDogById(id){
     };
 }
 
+export const createDog = (payload) => {
+    return async function(dispatch) {
+      try {
+        const response = await axios.post("http://localhost:3001/dogs",payload);
+
+        alert("perro creado correctamente con ID: " + response.data.id);
+        return dispatch({
+          type: DOG_POST,
+          payload: response.data.id
+        })
+      } catch (error) {
+        console.log(error)
+        alert("perro no creado")
+      }
+    }
+  }
+
+  export const getTemperament = () => {
+    return async function(dispatch) {
+      try {
+        let temperaments = (await axios("http://localhost:3001/temperaments")).data;
+        let allTemps = temperaments.map(e => e)
+        return dispatch({
+          type: GET_TEMPERAMENT,
+          payload: allTemps
+        })
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  }
+
+  export const orderDogs = (order) => {
+    return {
+        type: GET_ORDER,
+        payload: order
+    }
+};
+
+export const orderByWeight = (payload) => {
+  return {
+    type: ORDER_BY_WEIGHT,
+    payload
+  }
+}
+
+  // export const sortDogsDescending = (sortedDogs) => {
+  //   return async function(dispatch) {
+  //       return dispatch({
+  //           type: ORDER_DESC,
+  //           payload: sortedDogs
+  //           }) 
+  //   }   
+  // }
+
 export const GET_DOGS = "GET_DOGS"
 export const GET_DOGS_BY_NAME ="GET_DOGS_BY_NAME"
 export const GET_DOGS_BY_ID ="GET_DOGS_BY_ID"
+export const DOG_POST ="DOG_POST"
+export const GET_TEMPERAMENT ="GET_TEMPERAMENT"
+export const GET_ORDER ="GET_ORDER"
+export const ORDER_BY_WEIGHT ="ORDER_BY_WEIGHT"
 
 
 //las action son funciones para llenar las tarjetas de informacion
 //action: funcion de forma asincrona, que ocupa un dispatch con el que recibe una respuesta de una fuente externa (nuestro backend)
+

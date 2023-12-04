@@ -1,9 +1,41 @@
+import { useDispatch } from "react-redux";
+
+import { orderDogs, orderByWeight } from "../../redux/action";
+
 import './navbar.css';
 
+
 function Navbar({handleChange, handleSubmit}) {
+
+  const dispatch = useDispatch();
+    // const handleOrder = event => {
+    //     dispatch(orderDogs(event.target.value));
+    // }
+
+    function handleOrder(e){
+      const value = e.target.value;
+      if(value === "name_asc" || value === "name_des") {
+        dispatch(orderDogs(value))
+      } 
+      if(value === "peso_asc" || value === "peso_des") {
+        dispatch(orderByWeight(value))
+      }
+    }
+
   return (
     <div className="search-box">
       <form onChange={handleChange} >
+      <select
+          name="order"
+          id="order"
+          onChange={handleOrder}
+          >
+          <option value="name_asc">Nombre Ascendent</option>
+          <option value="name_des">Nombre Descendent</option>
+          <option className='option_name' value="peso_asc">Peso Ascendent</option>
+          <option className='option_name' value="peso_des">Peso Descendent</option>
+      </select>
+      {/* <button onClick={handleDescSort}>Descendente</button> */}
         <input placeholder='Busqueda' type='search'/>
         <button type='submit' onClick={handleSubmit}>Buscar</button>
       </form>
