@@ -14,12 +14,7 @@ function Navbar({handleChange, handleSubmit}) {
 
     function handleOrder(e){
       const value = e.target.value;
-      if(value === "name_asc" || value === "name_des") {
-        dispatch(orderDogs(value))
-      } 
-      if(value === "peso_asc" || value === "peso_des") {
-        dispatch(orderByWeight(value))
-      }
+      dispatch(orderDogs(value));
       // if(value === " Id"){
       //   dispatch(orderById(value))
       // }

@@ -60,36 +60,48 @@ function rootReducer(state = initialState, action) {
             let orderCopy = [...state.allDogs];
             if (action.payload === 'name_asc') {
                 orderCopy.sort((a, b) => {
-                    if (a.name > b.name) return 0;
+                    if (a.nombre > b.nombre) return 0;
                     else return -1;
                 });
             } else if (action.payload === 'name_des') {
                 orderCopy.sort((a, b) => {
-                    if (a.name < b.name) return 1;
+                    if (a.nombre < b.nombre) return 1;
                     else return -1;
                 });
+            }else if(action.payload === 'peso_asc') {
+                orderCopy.sort(function (a, b) {
+                    if (parseInt(a.peso_min) < parseInt(b.peso_min)) { return -1 }
+                    if (parseInt(b.peso_min) < parseInt(a.peso_min)) { return 1 }
+                    return 0;
+                })
+            }else if(action.payload === 'peso_des') {
+                orderCopy.sort(function (a, b) {
+                    if (parseInt(a.peso_min) > parseInt(b.peso_min)) { return -1 }
+                    if (parseInt(b.peso_min) > parseInt(a.peso_min)) { return 1 }
+                    return 0;
+                })
             }
             return {
                 ...state,
                 allDogs: orderCopy,
             }
 
-        case ORDER_BY_WEIGHT:
-            const orderDogsKg = action.payload === 'peso_asc' ?
-                state.allDogs.sort(function (a, b) {
-                    if (parseInt(a.peso_min) < parseInt(b.peso_min)) { return -1 }
-                    if (parseInt(b.peso_min) < parseInt(a.peso_min)) { return 1 }
-                    return 0;
-                }) :
-                state.allDogs.sort(function (a, b) {
-                    if (parseInt(a.peso_max) > parseInt(b.peso_max)) { return -1 }
-                    if (parseInt(a.peso_max) > parseInt(b.peso_max)) { return 1 }
-                    return 0;
-                })
-            return {
-                ...state,
-                allDogs: orderDogsKg
-            }
+        // case ORDER_BY_WEIGHT:
+        //     const orderDogsKg = action.payload === 'peso_asc' ?
+        //         state.allDogs.sort(function (a, b) {
+        //             if (parseInt(a.peso_min) < parseInt(b.peso_min)) { return -1 }
+        //             if (parseInt(b.peso_min) < parseInt(a.peso_min)) { return 1 }
+        //             return 0;
+        //         }) :
+        //         state.allDogs.sort(function (a, b) {
+        //             if (parseInt(a.peso_max) > parseInt(b.peso_max)) { return -1 }
+        //             if (parseInt(a.peso_max) > parseInt(b.peso_max)) { return 1 }
+        //             return 0;
+        //         })
+        //     return {
+        //         ...state,
+        //         allDogs: orderDogsKg
+        //     }
 
         //   case ORDER_BY_ID:
         //         let orderId = [...state.allDogs];

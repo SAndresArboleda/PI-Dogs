@@ -49,15 +49,6 @@ let error = {};
   } else if(parseInt(input.name.length) >= 25) {
     setError({...error, name:'debe contener menos de 25 caracteres'})
   }
-
-
-  // if(!input.Altura) {
-  //   setError({...error, Altura: 'debes ponerle un nombre'})
-  // } else if(!/[A-Z]+$/i.test(input.name)) {
-  //   setError({...error, Altura: 'solo puede contener letras'})
-  // } else if(parseInt(input.name.length) >= 25) {
-  //   setError({...error, Altura:'debe contener menos de 25 caracteres'})
-  // }
 }
 
   const handleCreation = (e) => {   //para que cuando le haga click en mi imput, me haga un filtrado de todos los "dogs", con el nombre que asigno dentro del imput (e.tajget.value)
@@ -112,7 +103,7 @@ let error = {};
         </div>
         <div>
           <label>Temperamentos: </label>
-          <input name="temperament" value={input.value} />
+          <input name="temperamentos" value={input.value} />
         </div>
       </form>      
       <button type='submit' onClick={handleCreation}>Crear nueva Dog</button>
