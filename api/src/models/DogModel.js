@@ -22,17 +22,29 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        altura: {
-            type: DataTypes.INTEGER,
+        altura_min: {
+            type: DataTypes.NUMBER,
             allowNull: false,
         },
-        peso: {
-            type: DataTypes.INTEGER,
+        altura_max: {
+            type: DataTypes.NUMBER,
             allowNull: false,
         },
-        años: {
-            type: DataTypes.INTEGER,
+        peso_min: {
+            type: DataTypes.NUMBER,
+            allowNull: false,
+        },
+        peso_max: {
+            type: DataTypes.NUMBER,
+            allowNull: false,
+        },
+        vida: {
+            type: DataTypes.NUMBER,
             allowNull: true,
+        },
+        temperamentos: {
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         creado:{
             type: DataTypes.BOOLEAN,

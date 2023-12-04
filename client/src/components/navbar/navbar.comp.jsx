@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 
-import { orderDogs, orderByWeight } from "../../redux/action";
+import { orderDogs, orderByWeight} from "../../redux/action";
 
 import './navbar.css';
 
@@ -20,6 +20,9 @@ function Navbar({handleChange, handleSubmit}) {
       if(value === "peso_asc" || value === "peso_des") {
         dispatch(orderByWeight(value))
       }
+      // if(value === " Id"){
+      //   dispatch(orderById(value))
+      // }
     }
 
   return (
@@ -30,6 +33,7 @@ function Navbar({handleChange, handleSubmit}) {
           id="order"
           onChange={handleOrder}
           >
+          {/* <option value="Id">Orden Inicial Id</option> */}
           <option value="name_asc">Nombre Ascendent</option>
           <option value="name_des">Nombre Descendent</option>
           <option className='option_name' value="peso_asc">Peso Ascendent</option>

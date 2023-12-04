@@ -46,12 +46,17 @@ const getRazaNameHandler = async (req, res) => {
 
 
 const postDogHandler = async (req, res) => {
-    const { nombre, altura, peso, años } = req.body;
+    const {nombre, altura_min, altura_max, peso_min, peso_max, vida, temperamentos } = req.body;
+    if(!nombre || !altura_min || !altura_max || !peso_min || !peso_max || !vida || !temperamentos) {
+        return res
+          .status(400)
+          .send({msg: "Falta enviar datos obligatorios"})
+      }
     try {
-        const response = await createDogDB(nombre, altura, peso, años)
+        const response = await createDogDB(nombre, altura_min, altura_max, peso_min, peso_max, vida, temperamentos)
         res.status(200).json(response)   //Crear Peroo. Se usa Json porque voy a devolver un objeto
     } catch (error) {
-        res.status(400).send({ error: error.message })
+        res.status(400).send({ error: error.message + " Andres no se creó" })
     }
 };
 

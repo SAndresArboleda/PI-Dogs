@@ -30,8 +30,10 @@ const Detalle = () => {
     }
         />
       <h4>temperamento: {dog.temperamento} </h4>
-      <h5>altura: {dog.altura} </h5>
-      <h5>peso(kg): {dog.peso} </h5>
+      <h5>altura min: {dog.altura_min} </h5>
+      <h5>altura max: {dog.ltura_max} </h5>
+      <h5>peso min(kg): {dog.peso_min} </h5>
+      <h5>peso max(kg): {dog.peso_max} </h5>
       <h5>vida: {dog.vida} </h5>
     </div>
   );

@@ -8,14 +8,18 @@ const { API_KEY } = process.env
 const getDogByRaza = async() => {
     let infClean = (arr)=>{
         return arr.map((elem)=>{
+            const [peso_min, peso_max] = elem.weight.metric.split('-').map(value => parseFloat(value.trim()));
+            const [altura_min, altura_max] = elem.height.metric.split('-').map(value => parseFloat(value.trim()));
             return {
                 id: elem.id,
                 image: elem.reference_image_id,
                 nombre: elem.name,
                 grupo: elem.breed_group,
                 temperamento: elem.temperament,
-                peso: elem.weight.metric,
-                altura: elem.height.metric,
+                peso_min,
+                peso_max,
+                altura_min,
+                altura_max,
                 vida: elem.life_span,
                 creado: false,
             }
@@ -32,14 +36,18 @@ const getDogById = async (id, source) => {
 
     let infoClean = (arr)=>{
         return arr.map((elem)=>{
+            const [peso_min, peso_max] = elem.weight.metric.split('-').map(value => parseFloat(value.trim()));
+            const [altura_min, altura_max] = elem.height.metric.split('-').map(value => parseFloat(value.trim()));
             return {
                 id: elem.id,
                 image: elem.reference_image_id,
                 nombre: elem.name,
                 grupo: elem.breed_group,
                 temperamento: elem.temperament,
-                peso: elem.weight.metric,
-                altura: elem.height.metric,
+                peso_min,
+                peso_max,
+                altura_min,
+                altura_max,
                 vida: elem.life_span,
                 creado: false,
             }
@@ -57,14 +65,18 @@ const getDogById = async (id, source) => {
 const getDogByName = async (name) => {
     let infoClean = (arr)=>{
         return arr.map((elem)=>{
+            const [peso_min, peso_max] = elem.weight.metric.split('-').map(value => parseFloat(value.trim()));
+            const [altura_min, altura_max] = elem.height.metric.split('-').map(value => parseFloat(value.trim()));
             return {
                 id: elem.id,
                 image: elem.reference_image_id,
                 nombre: elem.name,
                 grupo: elem.breed_group,
                 temperamento: elem.temperament,
-                peso: elem.weight.metric,
-                altura: elem.height.metric,
+                peso_min,
+                peso_max,
+                altura_min,
+                altura_max,
                 vida: elem.life_span,
                 creado: false,
             }
@@ -79,8 +91,8 @@ const getDogByName = async (name) => {
     return [...filterDogApi, ...dogNameAll]
 }
 
-const createDogDB = async (nombre,altura,peso,años)=>{ 
-    return await Dog.create({nombre,altura,peso,años});
+const createDogDB = async (nombre,altura_min, altura_max ,peso_min, peso_max, vida, temperamentos)=>{ 
+    return await Dog.create({nombre,altura_min, altura_max, peso_min, peso_max, vida, temperamentos});
 };
 
 

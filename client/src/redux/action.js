@@ -78,14 +78,13 @@ export const orderByWeight = (payload) => {
   }
 }
 
-  // export const sortDogsDescending = (sortedDogs) => {
-  //   return async function(dispatch) {
-  //       return dispatch({
-  //           type: ORDER_DESC,
-  //           payload: sortedDogs
-  //           }) 
-  //   }   
-  // }
+// export const orderById = (payload) => {
+//   return {
+//     type: ORDER_BY_ID,
+//     payload
+//   }
+// }
+
 
 export const GET_DOGS = "GET_DOGS"
 export const GET_DOGS_BY_NAME ="GET_DOGS_BY_NAME"
@@ -94,6 +93,7 @@ export const DOG_POST ="DOG_POST"
 export const GET_TEMPERAMENT ="GET_TEMPERAMENT"
 export const GET_ORDER ="GET_ORDER"
 export const ORDER_BY_WEIGHT ="ORDER_BY_WEIGHT"
+// export const ORDER_BY_ID = "ORDER_BY_ID"
 
 
 //las action son funciones para llenar las tarjetas de informacion
