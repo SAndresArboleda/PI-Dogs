@@ -8,7 +8,7 @@ function Temperaments({ dogTemperaments }) {  //aca recibimos a allDogs como pro
         <select className='select_form' name="temperamentos" >
             {dogTemperaments?.map(temperamento => {
                 return (
-                    <option className='option_form' value={temperamento.Temperamento}>{temperamento.Temperamento}</option>
+                    <option className='option_form' value={temperamento}>{temperamento}</option>
                 )
             })}
         </select>
