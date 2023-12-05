@@ -32,7 +32,7 @@ function Create() {
     peso_min: "",
     peso_max: "",
     vida: "",
-    temperamentos: [],
+    temperamentos: "",
   })
 
 
@@ -43,7 +43,7 @@ function Create() {
     peso_min: "",
     peso_max: "",
     vida: "",
-    temperamentos: [],
+    temperamentos: "",
   })
 
   const validate = (input) => {
@@ -78,16 +78,6 @@ function Create() {
   }
 
 
-
-  function handleSelect(e) {
-    if (input.temperamentos.includes(e.target.value)) return
-
-    setInput({
-      ...input,
-      temperament: [...input.temperamentos, e.target.value]
-    })
-  }
-
   return (
     <div className='Form_container'>
       <Link to="/home"><button>HOME</button></Link>
@@ -118,26 +108,20 @@ function Create() {
           <label>Vida: </label>
           <input name="vida" value={input.value} onChange={handleChange} />
         </div>
-
         <div>
-          <label>Temperamentos</label>
-          <div className="div_input">
-            <Temperaments dogTemperaments={dogTemperaments} />
-          </div>
-          {/* <div className='div_form_final_temps'>
-            <ul className='ul_temp'>
-              {selectNameState.map((e, i) => {
-                return(
-                <li className='li_temp' key={i}>
-                  {e.name}
-                  <button className='delete_temp' type='button' value={e.id} onClick={handleDelete}>x</button>
-                </li>
-                )
-              })}
-            </ul>
-          </div> */}
-
+          <label>Temperamentos escoge varios(ctrl + click): </label>
         </div>
+        <div>
+          <select className='select_form' name="temperamentos" multiple value={input.value} onChange={handleChange}>
+            {dogTemperaments?.map(temperamento => {
+              return (
+                <option value={temperamento} >{temperamento}{handleChange}</option>
+              )
+            })}
+            <imput name="Temperamento" />
+          </select>
+        </div>
+
       </form>
       <button type='submit' onClick={handleCreation}>Crear nueva Dog</button>
     </div>

@@ -11,7 +11,7 @@ const getTemperamt = async () => {
         let temperamentsArray = [];
 
         array.forEach((element) => {
-            temperaments += ','+element.temperament;   
+            temperaments += ','+ element.temperament;
         });
         temperaments = temperaments.replaceAll(" ",",")
         temperamentsArray = temperaments.split(',');
@@ -33,7 +33,7 @@ const getTemperamt = async () => {
         })
     }
     const infoApi = (await axios.get("https://api.thedogapi.com/v1/breeds")).data;
-    const razasApi = infClean(infoApi);
+    
     console.log(infoApi);
     const resultado = getUniqueTemperaments(infoApi);
 

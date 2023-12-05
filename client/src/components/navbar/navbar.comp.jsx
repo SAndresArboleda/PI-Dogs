@@ -1,11 +1,17 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 
 import { orderDogs, orderByWeight} from "../../redux/action";
+import Paginacion from "../paginacion/Paginacion"
 
 import './navbar.css';
 
 
-function Navbar({handleChange, handleSubmit}) {
+function Navbar({handleChange, handleSubmit, allDogs}) {
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPorPag, setItemsPorPag] = useState(4);
+
 
   const dispatch = useDispatch();
     // const handleOrder = event => {
@@ -39,6 +45,9 @@ function Navbar({handleChange, handleSubmit}) {
         <input placeholder='Busqueda' type='search'/>
         <button type='submit' onClick={handleSubmit}>Buscar</button>
       </form>
+      <div>
+      <Paginacion itemsPorPag={itemsPorPag} totalPosts={allDogs} paginate={setCurrentPage}/>
+      </div>
     </div>
   );
 }

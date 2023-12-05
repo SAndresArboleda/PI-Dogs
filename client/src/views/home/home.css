@@ -5,18 +5,16 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: linear-gradient(  
-        to left,
+    background: linear-gradient(to left,
             rgba(7, 27, 82, 1) 0%,
-            rgba(0, 128, 128, 1) 100%
-    );
+            rgba(0, 128, 128, 1) 100%);
     text-align: center;
 }
 
 .home-title {
     margin-top: 15px;
     margin-bottom: 50px;
-    font-size: 76px;
+    font-size: 50px;
     color: #eccac4;
     font-family: "Bigelow Rules";
 }
@@ -25,6 +23,45 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to left,
+            rgb(16, 105, 32) 0%,
+            rgba(0, 128, 128, 1) 100%);
+}
+
+.cards8 {
+    overflow-x: auto;
+    flex-direction: row;
+
+}
+
+.contenedor {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.galeria-item {
+    flex: 0 0 23%;
+    /* 23% para dejar espacio entre las imágenes */
+    margin-bottom: 20px;
+}
+
+.galeria-item img {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 /* 

@@ -36,6 +36,7 @@
   }
   .div_input {
     display: flex;
+    font-size: 14px;
     align-items: center;
     width: 100%;
     border-radius: 10px;
@@ -113,12 +114,12 @@
   
   .select_form {
     background-color: var(--gris-search-bar);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.5px;
     color: var(--gris-claro);
-    width: 100%;
-    padding: 5px 0;
+    width: 30%;
+    padding: 10px;
     border: none;
     cursor: pointer;
   }

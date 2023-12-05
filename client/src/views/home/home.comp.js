@@ -46,7 +46,7 @@ function Home() {
       <h2 className="home-title">Home</h2>
       <Link to='/create'><button>CREAR DOG</button></Link>
       <Navbar handleSubmit={handleSubmit} handleChange={handleChange}/>
-      <Cards allDogs={allDogs} />
+      <Cards allDogs={allDogs} className="Cards8"/>
 
     </div>
   );
