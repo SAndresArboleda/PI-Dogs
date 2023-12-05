@@ -14,7 +14,8 @@ function Navbar({handleChange, handleSubmit}) {
 
     function handleOrder(e){
       const value = e.target.value;
-      dispatch(orderDogs(value));
+        dispatch(orderDogs(value))
+        
       // if(value === " Id"){
       //   dispatch(orderById(value))
       // }

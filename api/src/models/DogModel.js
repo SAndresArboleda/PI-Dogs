@@ -44,7 +44,7 @@ module.exports = (sequelize) => {
         },
         temperamentos: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         creado:{
             type: DataTypes.BOOLEAN,

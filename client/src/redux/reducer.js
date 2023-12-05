@@ -14,7 +14,7 @@ import {
 let initialState = {
     allDogs: [],
     dogsCopy: [],
-    temperamentDogs: [],
+    dogTemperaments: [],
     dogId: '',
     ordenDogs: [],
 
@@ -53,19 +53,19 @@ function rootReducer(state = initialState, action) {
         case GET_TEMPERAMENT:
             return {
                 ...state,
-                temperamentDogs: action.payload
+                dogTemperaments: action.payload
             }
 
         case GET_ORDER:
             let orderCopy = [...state.allDogs];
             if (action.payload === 'name_asc') {
                 orderCopy.sort((a, b) => {
-                    if (a.nombre > b.nombre) return 0;
+                    if (a.nombre.toLowerCase() > b.nombre.toLowerCase()) return 0;
                     else return -1;
                 });
             } else if (action.payload === 'name_des') {
                 orderCopy.sort((a, b) => {
-                    if (a.nombre < b.nombre) return 1;
+                    if (a.nombre.toLowerCase() < b.nombre.toLowerCase()) return 1;
                     else return -1;
                 });
             }else if(action.payload === 'peso_asc') {
@@ -85,36 +85,6 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 allDogs: orderCopy,
             }
-
-        // case ORDER_BY_WEIGHT:
-        //     const orderDogsKg = action.payload === 'peso_asc' ?
-        //         state.allDogs.sort(function (a, b) {
-        //             if (parseInt(a.peso_min) < parseInt(b.peso_min)) { return -1 }
-        //             if (parseInt(b.peso_min) < parseInt(a.peso_min)) { return 1 }
-        //             return 0;
-        //         }) :
-        //         state.allDogs.sort(function (a, b) {
-        //             if (parseInt(a.peso_max) > parseInt(b.peso_max)) { return -1 }
-        //             if (parseInt(a.peso_max) > parseInt(b.peso_max)) { return 1 }
-        //             return 0;
-        //         })
-        //     return {
-        //         ...state,
-        //         allDogs: orderDogsKg
-        //     }
-
-        //   case ORDER_BY_ID:
-        //         let orderId = [...state.allDogs];
-        //         if (action.payload === 'id') {
-        //             orderId.sort((a, b) => {
-        //                 if (a.id > b.id) return -1;
-        //             });
-        //         }
-
-        //         return {
-        //             ...state,
-        //             allDogs: orderId,
-        //         }
 
         default:
             return { state }

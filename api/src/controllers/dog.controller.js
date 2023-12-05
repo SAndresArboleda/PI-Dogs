@@ -84,7 +84,7 @@ const getDogByName = async (name) => {
     };
     const apiClean = (await axios.get(`https://api.thedogapi.com/v1/breeds`)).data;
     const dogApi = infoClean(apiClean);
-    const filterDogApi = dogApi.filter((arr) => arr.nombre.includes(name));
+    const filterDogApi = dogApi.filter((arr) => arr.nombre.toLowerCase().includes(name.toLowerCase()));
     
     console.log(filterDogApi);
     const dogNameAll = await Dog.findAll({where:{nombre:name}});
