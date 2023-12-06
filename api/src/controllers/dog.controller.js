@@ -26,7 +26,7 @@ const getDogByRaza = async() => {
         })
     }
     const razasDB = await Dog.findAll()
-    const infoApi = (await axios.get(`https://api.thedogapi.com/v1/breeds`)).data; 
+    const infoApi = (await axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`)).data; 
     const razasApi = infClean(infoApi);
 
     return [...razasDB, ...razasApi]
@@ -82,7 +82,7 @@ const getDogByName = async (name) => {
             }
         })
     };
-    const apiClean = (await axios.get(`https://api.thedogapi.com/v1/breeds`)).data;
+    const apiClean = (await axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`)).data;
     const dogApi = infoClean(apiClean);
     const filterDogApi = dogApi.filter((arr) => arr.nombre.toLowerCase().includes(name.toLowerCase()));
     

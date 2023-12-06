@@ -42,11 +42,11 @@ function Home() {
 
   return (
     <div className="home">
-      <Link to='/home'><button >HOME</button></Link>
       <h2 className="home-title">Home</h2>
+      <Link to='/home'><button >HOME</button></Link>
       <Link to='/create'><button>CREAR DOG</button></Link>
       <Navbar handleSubmit={handleSubmit} handleChange={handleChange}/>
-      <Cards allDogs={allDogs} className="Cards8"/>
+      <Cards allDogs={allDogs} />
 
     </div>
   );

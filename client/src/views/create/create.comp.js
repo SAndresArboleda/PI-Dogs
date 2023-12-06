@@ -4,7 +4,7 @@ import './create.css';
 import { createDog, getTemperament } from '../../redux/action';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from "react";
-import Temperaments from '../../components/selectTemperamentos/selectTemperament.comp';
+
 
 
 function Create() {
@@ -79,10 +79,11 @@ function Create() {
 
 
   return (
+    <image src="CrearDogs.jpg" > 
     <div className='Form_container'>
       <Link to="/home"><button>HOME</button></Link>
       <p className='datos_obligatorios'>Crea tu Nuevo Perro</p>
-      <form onSubmit={""} >
+      <form onSubmit={""} className='form_create'>
         <div>
           <label>Nombre: </label>
           <input name="nombre" value={input.value} onChange={handleChange} />
@@ -118,14 +119,15 @@ function Create() {
                 <option value={temperamento} >{temperamento}{handleChange}</option>
               )
             })}
-            <imput name="Temperamento" />
           </select>
         </div>
 
       </form>
       <button type='submit' onClick={handleCreation}>Crear nueva Dog</button>
     </div>
+    </image>
   );
 }
 
 export default Create;
+

@@ -1,6 +1,7 @@
 const { Sequelize } = require('sequelize');
 const { Temperament } = require('../db')
 const axios = require('axios')
+const { API_KEY } = process.env
 
 
 const getTemperamt = async () => {
@@ -21,20 +22,9 @@ const getTemperamt = async () => {
             }
         })
         return uniqueTemperaments;
-
     }
 
-    let infClean = (arr) => {
-        return arr.map((elem) => {
-            return {
-                Temperamento: elem.temperament,
-                Creado: false,
-            }
-        })
-    }
     const infoApi = (await axios.get("https://api.thedogapi.com/v1/breeds")).data;
-    
-    console.log(infoApi);
     const resultado = getUniqueTemperaments(infoApi);
 
     return resultado

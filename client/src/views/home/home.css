@@ -8,27 +8,25 @@ body {
     background: linear-gradient(to left,
             rgba(7, 27, 82, 1) 0%,
             rgba(0, 128, 128, 1) 100%);
-    text-align: center;
+    /* text-align: center; */
 }
 
 .home-title {
     margin-top: 15px;
-    margin-bottom: 50px;
-    font-size: 50px;
+    margin-bottom: 25px;
+    font-size: 25px;
     color: #eccac4;
     font-family: "Bigelow Rules";
 }
 
 .home {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     align-items: center;
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to left,
-            rgb(16, 105, 32) 0%,
-            rgba(0, 128, 128, 1) 100%);
+    display:flex;
+    flex-direction: column;
+    
 }
 
 .cards8 {
