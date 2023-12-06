@@ -6,8 +6,13 @@ import { orderDogs, orderByWeight, getDogsApi, getDogsBD, getDogs} from "../../r
 import './navbar.css';
 
 
+
 function Navbar({handleChange, handleSubmit}) {
 
+
+  const dogTemperaments = useSelector((state) => state.dogTemperaments);
+
+  const [dogTemper, setdogTemper] = useState("")
   const dispatch = useDispatch();
 
     function handleOrder(e){
@@ -32,6 +37,13 @@ function Navbar({handleChange, handleSubmit}) {
       }
     }
 
+    function handleChange(e) {
+      setdogTemper({
+        ...dogTemper,
+        [e.target.name]: e.target.value
+      });
+    }
+
   return (
     <div className="search-box">
       <form onChange={handleChange} className="formNav">
@@ -47,6 +59,16 @@ function Navbar({handleChange, handleSubmit}) {
         <button type="button" onClick= {event=>handleListOption(event,'api')}>Api</button>
         <button type="button" onClick={event=>handleListOption(event,'bd')}>Base Datos</button>
         <button type="button" onClick={event=>handleListOption(event,'all')}>Todos</button>
+        <select>
+        <option value="temperamentDogs" >Dogs Temperament</option>
+        <select className='select_form' name="temperamentos">
+            {dogTemperaments?.map(temperamento => {
+              return (
+                <option value={temperamento} >{temperamento}{handleChange}</option>
+              )
+            })}
+          </select>
+        </select>
       </form>
     </div>
   );

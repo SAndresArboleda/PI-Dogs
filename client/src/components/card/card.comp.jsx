@@ -8,10 +8,12 @@ const Card = ({ dog }) => {
   return (
     <Link to={`/home/${dog.id}`} className="link">
       <div className="card-container">
-        <p>{dog.nombre} </p>
+        <p className='titleCard'>{dog.nombre} </p>
         <img className="cardImage" src={dog.image ? `https://cdn2.thedogapi.com/images/${dog.image}.jpg` : defaultImage} />
-        <div>
+        <div className='carcaterTempCard'>
           <p>temperamento: {dog.temperamento} </p>
+        </div>
+        <div className='carcateristCard'>
           <p>peso minimo (kg): {dog.peso_min} </p>
           <p>peso maximo (kg): {dog.peso_max} </p>
         </div>

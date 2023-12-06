@@ -1,6 +1,6 @@
 import { useEffect } from "react";  //nos ayuda a controlar el ciclo de vida en la se realiza la funcionalidad de mi pagina
 import { useDispatch, useSelector } from "react-redux";
-import { getDogs, getDogsByName} from "../../redux/action";
+import { getDogs, getDogsByName } from "../../redux/action";
 import { useState } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
@@ -26,14 +26,14 @@ function Home() {
     e.preventDefault();
     setSearchString(e.target.value);
   }
-  
+
   const handleSubmit = (e) => {   //para que cuando le haga click en mi imput, me haga un filtrado de todos los "dogs", con el nombre que asigno dentro del imput (e.tajget.value)
     e.preventDefault();
     dispatch(getDogsByName(searchString))
   }
 
 
-  useEffect(() =>  { //para que nuestra action sea ejecutada cuando la pagina se carga por primera vez hacemos el dispach dentro de useEffect
+  useEffect(() => { //para que nuestra action sea ejecutada cuando la pagina se carga por primera vez hacemos el dispach dentro de useEffect
     dispatch(getDogs());
     // return (()=>{   //consultar como hacerlo para el PI
     //   clearDetail()  //esto es para limpiar el estado cuando pase a otra pagina
@@ -42,12 +42,18 @@ function Home() {
 
   return (
     <div className="home">
-      <h2 className="home-title">Home</h2>
-      <Link to='/home'><button >HOME</button></Link>
-      <Link to='/create'><button>CREAR DOG</button></Link>
-      <Navbar handleSubmit={handleSubmit} handleChange={handleChange}/>
-      <Cards allDogs={allDogs} />
-
+      <div>
+        <h2 className="home-title">Home</h2>
+      </div>
+      <div className="botoneCreateHome">
+        <Link to='/create'><button>CREAR DOG</button></Link>
+      </div>
+      <div className="botonNavbarHome">
+        <Navbar handleSubmit={handleSubmit} handleChange={handleChange} />
+      </div>
+      <div>
+        <Cards allDogs={allDogs} />
+      </div>
     </div>
   );
 }

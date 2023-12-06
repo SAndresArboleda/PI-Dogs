@@ -7,6 +7,7 @@ import {
     GET_ORDER,
     GET_DOGS_API,
     GET_DOGS_BD,
+    GET_DOGS_TEMPERAMENT_BY_NAME
 
 
 
@@ -98,7 +99,12 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 allDogs: action.payload,
             };
-
+        case GET_DOGS_TEMPERAMENT_BY_NAME:
+            return {
+                ...state,
+                allDogs: action.payload,
+            };
+            
 
         default:
             return { state }

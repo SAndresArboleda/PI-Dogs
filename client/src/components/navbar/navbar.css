@@ -1,13 +1,13 @@
 .search-box {
     display: flex;
     flex-direction: row;
-    -webkit-appearance: none;
+    -webkit-appearance:inherit;
     border: none;
     outline: none;
-    padding: 10px;
-    width: 150px;
+    padding: 2px;
+    width: 158px;
     line-height: 30px;
-    margin-bottom: 30px; 
+    margin-bottom: 0px; 
 }
 
 .formNav{

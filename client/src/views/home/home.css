@@ -24,9 +24,23 @@ body {
     flex-direction: column; */
     align-items: center;
     font-family: Arial, sans-serif;
-    display:flex;
+    display: flex;
     flex-direction: column;
-    
+
+}
+
+.botoneCreateHome {}
+
+.botonNavbarHome {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    grid-gap: 1px;
+    background-color: rgb(207, 232, 220);
+    border: 2px solid rgb(79, 185, 227);
+    padding: 0px;
+    margin: 5px;
+    border-radius: 5px;
 }
 
 .cards8 {

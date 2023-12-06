@@ -53,13 +53,16 @@ const getDogById = async (id, source) => {
             }
         })
     }
-    const apiClean = (await axios.get(`https://api.thedogapi.com/v1/breeds/${id}`)).data;
-    const apiDogClean = infoClean([apiClean])
-    const dog = source === "api"
+      
+    let result = []
 
-    ? await apiDogClean  //data debe ir porque sino nos envia un objeto dentro de otro objeto;
-    : await Dog.findByPk(id);    //metodo findByPk es para encontrar mas rapido el id si es de la base de datos
-    return dog;
+    if(source==="api"){
+        const apiResponse = (await axios.get(`https://api.thedogapi.com/v1/breeds/${id}`)).data;
+        result = infoClean([apiResponse])
+    } else if(source==="bdd"){
+        result = [(await Dog.findByPk(id))];
+    }
+    return result;
 };
 
 const getDogByName = async (name) => {
@@ -86,7 +89,6 @@ const getDogByName = async (name) => {
     const dogApi = infoClean(apiClean);
     const filterDogApi = dogApi.filter((arr) => arr.nombre.toLowerCase().includes(name.toLowerCase()));
     
-    console.log(filterDogApi);
     const dogNameAll = await Dog.findAll({where:{nombre:name}});
     return [...filterDogApi, ...dogNameAll]
 }

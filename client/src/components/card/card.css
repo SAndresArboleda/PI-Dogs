@@ -1,28 +1,45 @@
 .card-container {
     display:flex;
+    height: 100%;
+    width: 100%;
     flex-direction: column;
-    background-color: #60cd58;
+    background: linear-gradient(0deg ,
+    rgb(222, 149, 32) 0%,
+    rgb(26, 71, 231) 100%);
     border-radius: 5px;
-    padding: 5px;
-    border: 1px solid grey;
+    padding: 1px;
+    border: 2px solid rgb(12, 36, 125);
     cursor: pointer;
-    font-size: 12px;
+    font-size: 10px;
+    
 }
-gap: 5px;
+.card-container:hover {
+    transform: scale(1.02);
+}
+/* gap: 5px;
+-moz-osx-font-smoothing: grayscale;
 transform: translateZ(0);
 transition: transform 0.25s ease-out;
-backface-visibility: hidden;
--moz-osx-font-smoothing: grayscale;
+backface-visibility: hidden; */
+.titleCard{
+    text-align: center;
+    text-shadow: 1px 1px 1px rgb(22, 14, 35)(0, 8, 255);
+    font-size:20px;
+    font-weight:bold ;
+    line-height: 0;
+    font-family: Franklin Gothic Medium;
 
-.card-container:hover {
-    transform: scale(1.05);
 }
 
 .cardImage {
     max-width:fit-content;
     align-self: center;
-    max-height: 170px;
-    border-radius: 5px;
+    max-height: 140px;
+    border-radius: 3px;
+    
+    object-fit:fill;
+    object-fit: contain;
+    
 }
 
 .link {
@@ -31,6 +48,29 @@ backface-visibility: hidden;
     background: linear-gradient(to left,
     rgba(7, 27, 82, 1) 0%,
     rgba(0, 128, 128, 1) 100%);
+    
+}
+
+.carcaterTempCard{
+    color: rgb(10, 10, 79);
+    font-style: normal;
+    text-align: center;
+    text-shadow: blue;
+    font-size:10px;
+    font-weight:bold ;
+    line-height: 0.;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.carcateristCard{
+    color: rgb(10, 10, 79);
+    font-style: normal;
+    text-align: center;
+    text-shadow: blue;
+    font-size:10px;
+    font-weight:bold ;
+    line-height: 0;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 /* display: flex;  //para que se muevan libremente los elementos dentro del contenedor

@@ -11,8 +11,6 @@ function Create() {
 
   const dispatch = useDispatch();
 
-
-
   useEffect(() => { //para que nuestra action sea ejecutada cuando la pagina se carga por primera vez hacemos el dispach dentro de useEffect
     dispatch(getTemperament());
   }, [dispatch]);
@@ -21,10 +19,7 @@ function Create() {
 
   const history = useHistory();
 
-
-
   const [dogId, setDogId] = useState("")
-
   const [input, setInput] = useState({
     nombre: "",
     altura_min: "",
@@ -34,7 +29,6 @@ function Create() {
     vida: "",
     temperamentos: "",
   })
-
 
   const [error, setError] = useState({
     nombre: "",
@@ -57,7 +51,19 @@ function Create() {
     } else if (parseInt(input.name.length) >= 25) {
       setError({ ...error, name: 'debe contener menos de 25 caracteres' })
     }
+
+    //Altura
+  // if(!input.height_min) {
+  //   setError({...error, height_max: "altura max requerida" })
+  // } else if(parseInt(input.height_max) > 85) {
+  //   setError({...error, height_max : 'debe ser menor a 85 CM' })
+  // } else if(!/^[0-9]+$/.test(input.height_max)) {
+  //   setError({...error, height_max: 'solo puede contener numeros'})
+  // }
+
+
   }
+
 
   const handleCreation = (e) => {   //para que cuando le haga click en mi imput, me haga un filtrado de todos los "dogs", con el nombre que asigno dentro del imput (e.tajget.value)
     e.preventDefault();
