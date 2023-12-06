@@ -4,14 +4,12 @@ import './cards.css';
 
 function Cards({ allDogs }) {  //aca recibimos a allDogs como props
   
-  
-  
   const [currentPage, setCurrentPage] = useState(1);
   const dogsPerPage = 8;
 
   const indexOfLastDogs = currentPage * dogsPerPage;
   const indexOfFirstDogs = indexOfLastDogs - dogsPerPage;
-  const currentDog = allDogs?.slice(indexOfFirstDogs, indexOfLastDogs);
+  const currentDogs = allDogs?.slice(indexOfFirstDogs, indexOfLastDogs);
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
@@ -20,16 +18,16 @@ function Cards({ allDogs }) {  //aca recibimos a allDogs como props
 
   return (
     <div className="card-list">
+      {currentDogs?.map(dog =>
+        < Card dog={dog} />)}
       <div>
-        <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentDog === 1} >
+        <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1} >
           Prev
         </button>
-        <button onClick={() => handlePageChange(currentPage + 1)} disabled={indexOfLastDogs >= allDogs} >
+        <button onClick={() => handlePageChange(currentPage + 1)} disabled={indexOfLastDogs >= allDogs?.length} >
           Next
         </button>
       </div>
-      {currentDog?.map(dog =>
-        < Card dog={dog} key={dog.id} />)}
     </div>
 
   );

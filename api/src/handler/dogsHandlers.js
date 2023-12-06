@@ -1,11 +1,10 @@
-const { getDogByRaza, getDogById, getDogByName, createDogDB, } = require("../controllers/dog.controller");
+const { getDogs, getDogById, getDogByName, createDogDB, } = require("../controllers/dog.controller");
 
 const getRazasHandler = async (req, res) => {    //Buscar todas las razas
     const { name } = req.query
-    console.log("name: " + name);
     if (!name) {
         try {
-            const dogRaza = await getDogByRaza()
+            const dogRaza = await getDogs()
             res.status(200).json(dogRaza);
         } catch (error) {
             res.status(400).json({ error: error.message });

@@ -5,7 +5,7 @@ const {Op} = require("sequelize")
 const { API_KEY } = process.env
 
 
-const getDogByRaza = async() => {
+const getDogs = async() => {
     let infClean = (arr)=>{
         return arr.map((elem)=>{
             const [peso_min, peso_max] = elem.weight.metric.split('-').map(value => parseFloat(value.trim()));
@@ -96,4 +96,4 @@ const createDogDB = async (nombre,altura_min, altura_max ,peso_min, peso_max, vi
 };
 
 
-module.exports = {getDogByRaza, getDogById, getDogByName, createDogDB, };
+module.exports = {getDogs, getDogById, getDogByName, createDogDB, };

@@ -5,8 +5,10 @@ import {
     DOG_POST,
     GET_TEMPERAMENT,
     GET_ORDER,
-    ORDER_BY_WEIGHT,
-    // ORDER_BY_ID
+    GET_DOGS_API,
+    GET_DOGS_BD,
+
+
 
 } from "./action";
 
@@ -68,13 +70,13 @@ function rootReducer(state = initialState, action) {
                     if (a.nombre.toLowerCase() < b.nombre.toLowerCase()) return 1;
                     else return -1;
                 });
-            }else if(action.payload === 'peso_asc') {
+            } else if (action.payload === 'peso_asc') {
                 orderCopy.sort(function (a, b) {
                     if (parseInt(a.peso_min) < parseInt(b.peso_min)) { return -1 }
                     if (parseInt(b.peso_min) < parseInt(a.peso_min)) { return 1 }
                     return 0;
                 })
-            }else if(action.payload === 'peso_des') {
+            } else if (action.payload === 'peso_des') {
                 orderCopy.sort(function (a, b) {
                     if (parseInt(a.peso_min) > parseInt(b.peso_min)) { return -1 }
                     if (parseInt(b.peso_min) > parseInt(a.peso_min)) { return 1 }
@@ -85,6 +87,18 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 allDogs: orderCopy,
             }
+        case GET_DOGS_API:
+            return {
+                ...state,
+                allDogs: action.payload,
+            };
+
+        case GET_DOGS_BD:
+            return {
+                ...state,
+                allDogs: action.payload,
+            };
+
 
         default:
             return { state }
