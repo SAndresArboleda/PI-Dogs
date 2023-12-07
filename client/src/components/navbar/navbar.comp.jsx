@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { orderDogs, orderByWeight, getDogsApi, getDogsBD, getDogs, getTemperament, updateByTemperament} from "../../redux/action";
 
 import './navbar.css';
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 
 
@@ -17,9 +18,6 @@ function Navbar({handleChange, handleSubmit}) {
 
   const dogTemperaments = useSelector((state) => state.dogTemperaments);
   const allDogs = useSelector((state) => state.allDogs);
-
-
-  const [temperamentState, setTemperament] = useState("")
 
 
     function handleOrder(e){
@@ -46,10 +44,8 @@ function Navbar({handleChange, handleSubmit}) {
 
     
   function temperamentChange(e) {
-    dispatch(getDogs)
-    console.log(e.target.value);
+    
     const selectedTemp = e.target.value
-    setTemperament( e.target.value);
     let dogList = allDogs;
     const filteredDogs = dogList.filter((elem)=>elem.temperamento?.includes(selectedTemp));
     dispatch(updateByTemperament(filteredDogs))
@@ -67,12 +63,13 @@ function Navbar({handleChange, handleSubmit}) {
           <option className='option_name' value="peso_des">Peso Descendent</option>
       </select>
         </div>
-        <input placeholder='Busqueda' type='search'/>
-        <button type='submit' onClick={handleSubmit}>Buscar</button>
         <button type="button" onClick= {event=>handleListOption(event,'api')}>Api</button>
         <button type="button" onClick={event=>handleListOption(event,'bd')}>Base Datos</button>
-        <button type="button" onClick={event=>handleListOption(event,'all')}>Todos</button>
-        <div>
+        <button type="button" onClick={event=>handleListOption(event,'all')}>Todos</button>        
+        <div className="botoneCreateHome">
+          <Link to='/create'><button>CREAR DOG</button></Link>
+        </div>
+        <div className="temperamento">
           <label for="cars">Temperamento</label>
           
           <select className='temperamentNavbar' name="temperamentos" onChange={temperamentChange}>
@@ -84,6 +81,10 @@ function Navbar({handleChange, handleSubmit}) {
             })}
 
           </select>
+        </div>
+        <div className="busqueda">
+          <input placeholder='Busqueda' type='search'/>
+          <button type='submit' onClick={handleSubmit}>Buscar</button>
         </div>
       </form>
     </div>

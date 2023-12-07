@@ -1,16 +1,15 @@
 .DetailContainer{
     display:inline-block;
     height:100%;
-    width: 100%;
+    width: 50%;
     flex-direction: column;
-    background: linear-gradient(0deg ,
-    rgb(176, 142, 27) 0%,
-    rgb(26, 71, 231) 100%);
+    background-color: rgba(207, 207, 207, 0.9);
     border-radius: 5px;
     padding: 1px;
     border: 2px solid rgb(12, 36, 125);
     cursor: pointer;
     font-size: 10px;
+    margin-top: 5%;
 }
     
 
@@ -19,9 +18,7 @@
     height: 100%;
     width: 100%;
     flex-direction:inherit;
-    background: linear-gradient(0deg ,
-    rgb(222, 149, 32) 0%,
-    rgb(26, 71, 231) 100%);
+   
     border-radius: 5px;
     padding: 1px;
     border: 2px solid rgb(12, 36, 125);
@@ -37,7 +34,7 @@
 .titleDet{
     text-align: center;
     text-shadow: 1px 1px 1px rgb(22, 14, 35)(0, 8, 255);
-    font-size:20px;
+    font-size:40px;
     font-weight:bold ;
     line-height: 0;
     font-family: Franklin Gothic Medium;

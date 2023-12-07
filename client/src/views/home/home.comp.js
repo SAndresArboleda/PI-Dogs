@@ -42,12 +42,6 @@ function Home() {
 
   return (
     <div className="home">
-      <div>
-        <h2 className="home-title">Home</h2>
-      </div>
-      <div className="botoneCreateHome">
-        <Link to='/create'><button>CREAR DOG</button></Link>
-      </div>
       <div className="botonNavbarHome">
         <Navbar handleSubmit={handleSubmit} handleChange={handleChange} />
       </div>

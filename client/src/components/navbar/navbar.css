@@ -1,14 +1,8 @@
 .search-box {
-    display: flex;
+    display: inline-block;
     border: none;
-    outline: none;
-    padding: 2px;
-    width: 200px;
-    flex-direction: row;
-    line-height: 30px;
-    margin-bottom: 0px;
-    line-break: auto;
-    
+    width: 100%;
+    padding: 10px;
 }
 
 .formNav{
@@ -19,9 +13,27 @@
     
 }
 
+.busqueda{
+    display: flex;
+    width: 20%;
+    vertical-align: middle;
+    margin-left: 5%; 
+    margin-right: 0;
+    
+}
+
+.temperamento{
+    display: flex;
+    width: 30%;
+    vertical-align: middle;
+    margin-left: auto; 
+    margin-right: 0;
+    
+}
+
 .temperamentNavbar{
     width: auto;
-    
+
 }
 /* margin-left: 10px; */
 

@@ -5,9 +5,10 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: linear-gradient(to left,
+    background-image: url('https://images.ecestaticos.com/gdZbptIDE8BayYRvTbJUbWAkEKU=/0x0:1254x837/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2Fd77%2F7dc%2Faa6%2Fd777dcaa6c812b3e54afc49bc0a46acc.jpg')
+    /* background: linear-gradient(to left,
             rgba(7, 27, 82, 1) 0%,
-            rgba(0, 128, 128, 1) 100%);
+            rgba(0, 128, 128, 1) 100%); */
     /* text-align: center; */
 }
 
@@ -30,15 +31,19 @@ body {
 
 }
 
-/* .botoneCreateHome {} */
+.botoneCreateHome {
+    display: block;
+    width: 40%;
+    height: auto;
+}
 
 .botonNavbarHome {
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: center;
     grid-gap: 1px;
-    background-color: rgb(207, 232, 220);
-    border: 2px solid rgb(79, 185, 227);
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgb(82, 82, 82);
     padding: 0px;
     margin: 5px;
     border-radius: 5px;
