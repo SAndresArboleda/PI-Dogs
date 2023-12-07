@@ -40,7 +40,7 @@ const Detalle = () => {
 
         <div className='textDetail'>
           <p>altura min: {dog.altura_min} </p>
-          <p>altura max: {dog.ltura_max} </p>
+          <p>altura max: {dog.altura_max} </p>
           <p>peso min(kg): {dog.peso_min} </p>
           <p>peso max(kg): {dog.peso_max} </p>
           <h5>vida: {dog.vida} </h5>

@@ -1,19 +1,29 @@
 .search-box {
     display: flex;
-    flex-direction: row;
-    -webkit-appearance:inherit;
     border: none;
     outline: none;
     padding: 2px;
-    width: 158px;
+    width: 200px;
+    flex-direction: row;
     line-height: 30px;
-    margin-bottom: 0px; 
+    margin-bottom: 0px;
+    line-break: auto;
+    
 }
 
 .formNav{
     display: flex;
+    justify-content: space-around;
     flex-direction: row;
+    margin: auto;
+    
 }
+
+.temperamentNavbar{
+    width: auto;
+    
+}
+/* margin-left: 10px; */
 
 /* -webkit-appearance: none;
 border: none;  // le quito el borde

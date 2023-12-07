@@ -42,7 +42,7 @@ module.exports = (sequelize) => {
             type: DataTypes.NUMBER,
             allowNull: true,
         },
-        temperamentos: {
+        temperamento: {
             type: DataTypes.STRING,
             allowNull: true,
         },

@@ -7,7 +7,7 @@ import {
     GET_ORDER,
     GET_DOGS_API,
     GET_DOGS_BD,
-    GET_DOGS_TEMPERAMENT_BY_NAME
+    UPDATE_BY_TEMPERAMENT
 
 
 
@@ -79,8 +79,8 @@ function rootReducer(state = initialState, action) {
                 })
             } else if (action.payload === 'peso_des') {
                 orderCopy.sort(function (a, b) {
-                    if (parseInt(a.peso_min) > parseInt(b.peso_min)) { return -1 }
-                    if (parseInt(b.peso_min) > parseInt(a.peso_min)) { return 1 }
+                    if (parseInt(a.peso_max) > parseInt(b.peso_max)) { return -1 }
+                    if (parseInt(b.peso_max) > parseInt(a.peso_max)) { return 1 }
                     return 0;
                 })
             }
@@ -99,7 +99,7 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 allDogs: action.payload,
             };
-        case GET_DOGS_TEMPERAMENT_BY_NAME:
+        case UPDATE_BY_TEMPERAMENT:
             return {
                 ...state,
                 allDogs: action.payload,

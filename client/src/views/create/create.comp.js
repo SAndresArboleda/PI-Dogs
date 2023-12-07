@@ -122,7 +122,7 @@ function Create() {
           <select className='select_form' name="temperamentos" multiple value={input.value} onChange={handleChange}>
             {dogTemperaments?.map(temperamento => {
               return (
-                <option value={temperamento} >{temperamento}{handleChange}</option>
+                <option value={temperamento} >{temperamento}</option>
               )
             })}
           </select>

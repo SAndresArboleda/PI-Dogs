@@ -93,8 +93,8 @@ const getDogByName = async (name) => {
     return [...filterDogApi, ...dogNameAll]
 }
 
-const createDogDB = async (nombre,altura_min, altura_max ,peso_min, peso_max, vida, temperamentos)=>{ 
-    return await Dog.create({nombre,altura_min, altura_max, peso_min, peso_max, vida, temperamentos});
+const createDogDB = async (nombre,altura_min, altura_max ,peso_min, peso_max, vida, temperamento)=>{ 
+    return await Dog.create({nombre,altura_min, altura_max, peso_min, peso_max, vida, temperamento});
 };
 
 

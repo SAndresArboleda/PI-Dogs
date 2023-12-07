@@ -1,21 +1,21 @@
 .DetailContainer{
-    display:block;
+    display:inline-block;
     height:100%;
-    width: 40%;
+    width: 100%;
     flex-direction: column;
     background: linear-gradient(0deg ,
-    rgb(222, 149, 32) 0%,
+    rgb(176, 142, 27) 0%,
     rgb(26, 71, 231) 100%);
     border-radius: 5px;
     padding: 1px;
     border: 2px solid rgb(12, 36, 125);
     cursor: pointer;
     font-size: 10px;
-    
 }
+    
 
 .card-contain {
-    display:flex;
+    display:inline-flex;
     height: 100%;
     width: 100%;
     flex-direction:inherit;

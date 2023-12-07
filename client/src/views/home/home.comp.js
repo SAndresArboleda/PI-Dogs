@@ -13,7 +13,7 @@ import './home.css';
 
 //1.para ocupar el dispach, traer el hook y guardarlo en una variable
 function Home() {
-  const dispatch = useDispatch();   //Dispach es la forma como le comunico algo a mi store
+  const dispatch = useDispatch();   //Dispach es la forma como le comunico algo a mi store con la intencion de afectar el estado
   const allDogs = useSelector((state) => state.allDogs); //una vez que se modifica el estado se envia a todos los componentes subscritos al estado. 
   //con useSelector indico a que estado quiero estar subscrito, para ervisar sus cambios
   //alDogs es un componente global porque esta subscrito en el redux(que es donde estan los componentes globales)/en reducer.

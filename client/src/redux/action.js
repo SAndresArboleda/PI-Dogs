@@ -104,18 +104,10 @@ export function getDogsBD() {
     })
   };
 }
-export const getTemperamentsByName = (name) => {
-  return async function (dispatch) {
-    try {
-      let temperaments = (await axios(`http://localhost:3001/temperaments?name=${name}`)).data;
-      let dogTemp = temperaments.filter((e)=>e.temperament)
-      return dispatch({
-        type: GET_DOGS_TEMPERAMENT_BY_NAME,
-        payload: temperaments
-      })
-    } catch (error) {
-      console.log(error)
-    }
+export const updateByTemperament = (dogListParam) => {
+  return {
+    type: UPDATE_BY_TEMPERAMENT,
+    payload: dogListParam
   }
 }
 
@@ -137,7 +129,7 @@ export const GET_ORDER = "GET_ORDER"
 export const ORDER_BY_WEIGHT = "ORDER_BY_WEIGHT"
 export const GET_DOGS_API = "GET_DOGS_API"
 export const GET_DOGS_BD = "GET_DOGS_BD"
-export const GET_DOGS_TEMPERAMENT_BY_NAME = "GET_DOGS_TEMPERAMENT_BY_NAME"
+export const UPDATE_BY_TEMPERAMENT = "UPDATE_BY_TEMPERAMENT"
 // export const ORDER_BY_ID = "ORDER_BY_ID"
 
 

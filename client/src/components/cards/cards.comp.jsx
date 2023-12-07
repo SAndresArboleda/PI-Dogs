@@ -19,7 +19,7 @@ function Cards({ allDogs }) {  //aca recibimos a allDogs como props
   return (
     <div className="card-list">
       {currentDogs?.map(dog =>
-        < Card dog={dog} />)}
+        < Card dog={dog}/>)}
       <div>
         <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1} >
           Prev
